@@ -207,11 +207,7 @@ public class MainActivity extends AppCompatActivity {
 
     private int gamesPlayed = 0;
     private int wins = 0;
-
-
     public void twentyFivePrcntWinChance() {
-        Random random = new Random();
-
         if (gamesPlayed > 0) {
             double winRate = calculateWinRate();
             if (winRate < 25) {
