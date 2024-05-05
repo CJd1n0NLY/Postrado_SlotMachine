@@ -205,18 +205,33 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void twentyFivePrcntWinChance(){
+    private int gamesPlayed = 0;
+    private int wins = 0;
+
+
+    public void twentyFivePrcntWinChance() {
         Random random = new Random();
-        int winChance = random.nextInt(100);
 
-        if (winChance < 25) {
-            resultNum1.setText(betNum1.getText().toString());
-            resultNum2.setText(betNum2.getText().toString());
-            resultNum3.setText(betNum3.getText().toString());
-        } else {
-            generateNumbers(resultNum1, resultNum2, resultNum3);
+        if (gamesPlayed > 0) {
+            double winRate = calculateWinRate();
+            if (winRate < 25) {
+                resultNum1.setText(betNum1.getText().toString());
+                resultNum2.setText(betNum2.getText().toString());
+                resultNum3.setText(betNum3.getText().toString());
+                wins++;
+            } else {
+                generateNumbers(resultNum1, resultNum2, resultNum3);
+            }
         }
+        gamesPlayed++;
+    }
 
+    public double calculateWinRate() {
+        if (gamesPlayed == 0) {
+            return 0.0; // Return 0 if no games have been played
+        } else {
+            return ((double) wins / gamesPlayed) * 100; // Calculate win rate
+        }
     }
 
     public void gameResult() {
