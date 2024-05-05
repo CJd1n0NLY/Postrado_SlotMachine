@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Postrado_SlotMachine</string>
+    <string name="slot_machine">Slot Machine</string>
+    <string name="zero">0</string>
+    <string name="enter_bet_amount">Enter Bet Amount</string>
+    <string name="userAmount">1000.00</string>
+    <string name="startingMultiplier">2x</string>
+    <string name="set">Set</string>
+    <string name="review">Review</string>
+    <string name="reset">Reset</string>
+</resources>
